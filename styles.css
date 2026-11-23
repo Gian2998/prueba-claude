@@ -56,17 +56,30 @@ footer,
     transform 0.2s ease;
 }
 
+/* Celular primero. El margen lateral de 4rem deja lugar al botón de tema
+   (1rem + 2.75rem) para que el título nunca quede debajo de él. */
 header {
   position: relative;
   background-color: var(--header-bg);
-  padding: 2rem 4rem;
+  padding: 1.25rem 4rem;
   text-align: center;
   border-bottom: 1px solid var(--header-border);
 }
 
 header h1 {
   color: var(--title);
-  font-size: 2.5rem;
+  font-size: 2rem;
+}
+
+/* Tablet y computadora: encabezado más amplio */
+@media (min-width: 768px) {
+  header {
+    padding: 2rem 4rem;
+  }
+
+  header h1 {
+    font-size: 2.5rem;
+  }
 }
 
 /* ===== Interruptor de tema ===== */
@@ -163,7 +176,11 @@ main {
   margin-bottom: 1rem;
 }
 
+/* Alto mínimo de 44px para que sea cómodo de tocar */
 .tarjeta a {
+  display: flex;
+  align-items: center;
+  min-height: 2.75rem;
   margin-top: auto;
   color: var(--accent);
   font-weight: 600;
@@ -182,10 +199,6 @@ main {
 
 /* Pantallas muy chicas */
 @media (max-width: 480px) {
-  header h1 {
-    font-size: 2rem;
-  }
-
   .presentacion,
   .tarjeta {
     padding: 1.25rem;

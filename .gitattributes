@@ -1,0 +1,3 @@
+# Los scripts de bash se guardan siempre con finales de línea de Linux (LF):
+# con los de Windows (CRLF), bash no los puede ejecutar.
+*.sh text eol=lf

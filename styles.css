@@ -62,6 +62,8 @@ header,
 .presentacion,
 .sobre-mi,
 .tarjeta,
+.habilidades,
+.habilidades-lista li,
 .contacto,
 .contacto input,
 .contacto textarea,
@@ -239,6 +241,47 @@ main {
   outline: 3px solid var(--accent);
   outline-offset: 2px;
   border-radius: 4px;
+}
+
+/* ===== Mis habilidades ===== */
+.habilidades {
+  max-width: 700px;
+  margin: 2.5rem auto 0;
+  background-color: var(--card-bg);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px var(--card-shadow);
+}
+
+/* Pantallas muy chicas: menos relleno en "Mis habilidades" */
+@media (max-width: 480px) {
+  .habilidades {
+    padding: 1.25rem;
+  }
+}
+
+.habilidades h2 {
+  color: var(--title);
+  margin-bottom: 1.5rem;
+}
+
+/* Las etiquetas van una al lado de la otra y bajan de renglón si no entran,
+   así no hay scroll horizontal en pantallas angostas */
+.habilidades-lista {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* Cada tecnología se ve como una etiqueta redondeada. El texto va en el color
+   normal (y no en el de los enlaces) para que no parezca algo que se puede tocar */
+.habilidades-lista li {
+  padding: 0.4rem 1rem;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  color: var(--text);
+  font-weight: 600;
 }
 
 /* ===== Contacto ===== */

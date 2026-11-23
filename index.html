@@ -18,7 +18,8 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
+  <!-- El id "inicio" es el destino del enlace "Volver arriba" del pie -->
+  <header id="inicio">
     <h1>Mi página</h1>
     <button id="tema-toggle" type="button" aria-label="Cambiar a modo oscuro">🌙</button>
   </header>
@@ -102,6 +103,9 @@
   </main>
 
   <footer>
+    <!-- Es un enlace (y no un botón) porque lleva a otro lugar de la página;
+         así funciona aunque JavaScript esté desactivado -->
+    <a href="#inicio" class="volver-arriba">↑ Volver arriba</a>
     <p>&copy; 2026 Mi página. Todos los derechos reservados.</p>
   </footer>
 

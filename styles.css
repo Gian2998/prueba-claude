@@ -357,3 +357,24 @@ footer {
   font-size: 0.9rem;
   border-top: 1px solid var(--footer-border);
 }
+
+/* Enlace "Volver arriba": 44px de alto para tocarlo cómodo */
+.volver-arriba {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0 0.75rem;
+  margin-bottom: 0.25rem;
+  color: var(--footer-text);
+  font-weight: 600;
+}
+
+.volver-arriba:hover {
+  text-decoration: none;
+}
+
+.volver-arriba:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}

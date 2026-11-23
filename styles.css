@@ -1,0 +1,200 @@
+/* ===== Tema claro (predeterminado) ===== */
+:root {
+  --bg: #f7f9fc;
+  --text: #333;
+  --header-bg: #dbeafe;
+  --header-border: #c7dcf7;
+  --title: #1e3a8a;
+  --card-bg: #ffffff;
+  --card-shadow: rgba(0, 0, 0, 0.06);
+  --accent: #2563eb;
+  --footer-bg: #e0f2f1;
+  --footer-border: #c8e6e4;
+  --footer-text: #555;
+}
+
+/* ===== Tema oscuro ===== */
+[data-theme="dark"] {
+  --bg: #0f172a;
+  --text: #e2e8f0;
+  --header-bg: #1e293b;
+  --header-border: #334155;
+  --title: #93c5fd;
+  --card-bg: #1e293b;
+  --card-shadow: rgba(0, 0, 0, 0.4);
+  --accent: #60a5fa;
+  --footer-bg: #134e4a;
+  --footer-border: #115e59;
+  --footer-text: #ccfbf1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+body,
+header,
+.presentacion,
+.tarjeta,
+footer,
+#tema-toggle {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease,
+    transform 0.2s ease;
+}
+
+header {
+  position: relative;
+  background-color: var(--header-bg);
+  padding: 2rem 4rem;
+  text-align: center;
+  border-bottom: 1px solid var(--header-border);
+}
+
+header h1 {
+  color: var(--title);
+  font-size: 2.5rem;
+}
+
+/* ===== Interruptor de tema ===== */
+#tema-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  border: 1px solid var(--header-border);
+  background-color: var(--card-bg);
+  color: var(--title);
+  font-size: 1.25rem;
+  cursor: pointer;
+  box-shadow: 0 1px 4px var(--card-shadow);
+}
+
+#tema-toggle:hover {
+  border-color: var(--accent);
+}
+
+#tema-toggle:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+main {
+  flex: 1;
+  padding: 2rem 1rem;
+}
+
+.presentacion {
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: var(--card-bg);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px var(--card-shadow);
+}
+
+.presentacion h2 {
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+/* ===== Mis proyectos ===== */
+.proyectos {
+  max-width: 960px;
+  margin: 2.5rem auto 0;
+}
+
+.proyectos h2 {
+  color: var(--title);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Celular primero: una tarjeta debajo de la otra */
+.proyectos-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+/* Tablet y computadora: tres columnas */
+@media (min-width: 768px) {
+  .proyectos-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.tarjeta {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--card-bg);
+  border: 1px solid var(--header-border);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px var(--card-shadow);
+  padding: 1.5rem;
+}
+
+.tarjeta:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+
+.tarjeta h3 {
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.tarjeta p {
+  margin-bottom: 1rem;
+}
+
+.tarjeta a {
+  margin-top: auto;
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.tarjeta a:hover {
+  text-decoration: underline;
+}
+
+.tarjeta a:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Pantallas muy chicas */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .presentacion,
+  .tarjeta {
+    padding: 1.25rem;
+  }
+}
+
+footer {
+  background-color: var(--footer-bg);
+  text-align: center;
+  padding: 1rem;
+  color: var(--footer-text);
+  font-size: 0.9rem;
+  border-top: 1px solid var(--footer-border);
+}

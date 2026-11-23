@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi página</title>
+  <script>
+    // Aplica el tema antes de dibujar la página para evitar un parpadeo.
+    (function () {
+      var tema = null;
+      try { tema = localStorage.getItem("tema"); } catch (e) {}
+      if (tema !== "light" && tema !== "dark") {
+        tema = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      }
+      document.documentElement.setAttribute("data-theme", tema);
+    })();
+  </script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Mi página</h1>
+    <button id="tema-toggle" type="button" aria-label="Cambiar a modo oscuro">🌙</button>
+  </header>
+
+  <main>
+    <section class="presentacion">
+      <h2>Bienvenido</h2>
+      <p>
+        ¡Hola! Esta es mi página web personal. Acá vas a encontrar información
+        sobre mí, mis intereses y los proyectos en los que trabajo.
+        Gracias por pasar a visitarla.
+      </p>
+    </section>
+
+    <section class="proyectos" aria-labelledby="proyectos-titulo">
+      <h2 id="proyectos-titulo">Mis proyectos</h2>
+      <div class="proyectos-grid">
+        <article class="tarjeta">
+          <h3>Página personal</h3>
+          <p>Mi sitio web hecho con HTML, CSS y JavaScript, con modo claro y oscuro.</p>
+          <a href="#">Ver proyecto →</a>
+        </article>
+        <article class="tarjeta">
+          <h3>Lista de tareas</h3>
+          <p>Una aplicación simple para anotar pendientes y marcarlos como hechos.</p>
+          <a href="#">Ver proyecto →</a>
+        </article>
+        <article class="tarjeta">
+          <h3>Calculadora</h3>
+          <p>Calculadora básica para hacer operaciones desde el navegador.</p>
+          <a href="#">Ver proyecto →</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Mi página. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

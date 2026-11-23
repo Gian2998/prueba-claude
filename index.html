@@ -108,8 +108,10 @@
   <footer>
     <!-- Es un enlace (y no un botón) porque lleva a otro lugar de la página;
          así funciona aunque JavaScript esté desactivado -->
-    <a href="#inicio" class="volver-arriba">↑ Volver arriba</a>
-    <p>Hecho por Gianfranco con Claude Code</p>
+    <!-- aria-hidden: la flecha es decoración, el lector de pantalla no la lee -->
+    <a href="#inicio" class="volver-arriba"><span aria-hidden="true">↑</span> Volver arriba</a>
+    <!-- lang="en": el lector de pantalla pronuncia "Claude Code" en inglés -->
+    <p>Hecho por Gianfranco con <span lang="en">Claude Code</span></p>
   </footer>
 
   <script src="script.js"></script>

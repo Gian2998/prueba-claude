@@ -17,8 +17,6 @@
   --error: #b91c1c;
   --success: #15803d;
   --on-accent: #ffffff;
-  /* Rojo del título "Sobre mí": #e00000 en vez de #ff0000 para llegar a 4.5:1 de contraste */
-  --sobre-mi-titulo: #e00000;
 }
 
 /* ===== Tema oscuro ===== */
@@ -41,8 +39,6 @@
   --success: #86efac;
   /* Texto oscuro sobre el azul claro: el blanco no llegaría a 4.5:1 de contraste */
   --on-accent: #0f172a;
-  /* Rojo más claro para que se lea sobre el fondo oscuro (4.8:1) */
-  --sobre-mi-titulo: #ff5c5c;
 }
 
 * {
@@ -160,11 +156,6 @@ main {
 /* ===== Sobre mí ===== */
 .sobre-mi {
   margin-top: 2.5rem;
-}
-
-/* Título en rojo; reemplaza al azul que comparte con la presentación */
-.sobre-mi h2 {
-  color: var(--sobre-mi-titulo);
 }
 
 /* Espacio entre párrafos: el primero no lo necesita */

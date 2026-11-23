@@ -43,6 +43,10 @@ Página web personal estática hecha con HTML, CSS y JavaScript puro, sin framew
   - Un tamaño cómodo para tocar (unos 44px).
   - Un estilo `:focus-visible`, para quien navega con teclado.
 
+## Comentarios
+
+- Los comentarios del código se escriben en español, en los tres archivos (HTML, CSS y JavaScript).
+
 ## Cómo probar
 
 No hay tests automáticos. Hay que abrir `index.html` y revisar:

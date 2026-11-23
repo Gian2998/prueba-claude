@@ -33,6 +33,20 @@
       </p>
     </section>
 
+    <!-- Texto de ejemplo: reemplazalo por el tuyo -->
+    <section class="sobre-mi" aria-labelledby="sobre-mi-titulo">
+      <h2 id="sobre-mi-titulo">Sobre mí</h2>
+      <p>
+        Soy una persona curiosa a la que le gusta entender cómo funcionan las cosas.
+        Hace poco empecé a aprender programación y estoy dando mis primeros pasos con
+        HTML, CSS y JavaScript.
+      </p>
+      <p>
+        En mi tiempo libre me gusta leer, escuchar música y probar ideas nuevas en
+        pequeños proyectos como los que vas a ver más abajo.
+      </p>
+    </section>
+
     <section class="proyectos" aria-labelledby="proyectos-titulo">
       <h2 id="proyectos-titulo">Mis proyectos</h2>
       <div class="proyectos-grid">
@@ -54,6 +68,37 @@
         </article>
       </div>
     </section>
+
+    <section class="contacto" aria-labelledby="contacto-titulo">
+      <h2 id="contacto-titulo">Contacto</h2>
+      <!-- "novalidate" apaga los avisos propios del navegador:
+           los errores los muestra formulario.js, con el estilo de la página -->
+      <form id="form-contacto" novalidate>
+        <!-- "aria-describedby" une cada campo con su mensaje de error,
+             así el lector de pantalla lo lee al llegar al campo -->
+        <div class="campo">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" autocomplete="name"
+                 aria-describedby="nombre-error">
+          <p class="campo-error" id="nombre-error"></p>
+        </div>
+        <div class="campo">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" autocomplete="email"
+                 aria-describedby="email-error">
+          <p class="campo-error" id="email-error"></p>
+        </div>
+        <div class="campo">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="5" maxlength="1000"
+                    aria-describedby="mensaje-error"></textarea>
+          <p class="campo-error" id="mensaje-error"></p>
+        </div>
+        <button type="submit" class="boton-enviar">Enviar</button>
+        <!-- role="status" hace que el lector de pantalla anuncie el mensaje de éxito -->
+        <p id="form-estado" class="form-estado" role="status"></p>
+      </form>
+    </section>
   </main>
 
   <footer>
@@ -61,5 +106,6 @@
   </footer>
 
   <script src="script.js"></script>
+  <script src="formulario.js"></script>
 </body>
 </html>

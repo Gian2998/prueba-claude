@@ -12,8 +12,8 @@ Página web personal estática hecha con HTML, CSS y JavaScript puro, sin framew
   - Incluye un script corto en el `<head>` que aplica el tema antes de pintar la página. Tiene que quedar en el `<head>` para que no parpadee al cargar.
 - `styles.css`: todos los estilos, ordenados en bloques.
   - Variables del tema claro, variables del tema oscuro y reinicio básico.
-  - Estilos de cada sección.
-  - Media queries.
+  - Estilos de cada sección, en el orden en que aparecen en la página.
+  - No hay un bloque de media queries al final: cada media query va justo después de los estilos que modifica.
 - `script.js`: solo maneja el botón de tema.
   - Alterna `data-theme` en `<html>`.
   - Actualiza el ícono 🌙/☀️ y el `aria-label`.
@@ -37,7 +37,7 @@ Página web personal estática hecha con HTML, CSS y JavaScript puro, sin framew
 - Se diseña primero para celular:
   - Los estilos base son para pantallas chicas.
   - Las pantallas grandes se agregan con `@media (min-width: 768px)`.
-  - Hay ajustes extra para menos de 480px.
+  - Hay ajustes extra para pantallas de 480px o menos, con `@media (max-width: 480px)`.
 - Las tarjetas van en una columna en celular y en 3 columnas desde 768px.
 - Los elementos interactivos necesitan:
   - Un tamaño cómodo para tocar (unos 44px).

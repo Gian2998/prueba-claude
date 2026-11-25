@@ -23,7 +23,7 @@ sonar() {
   powershell.exe -NoProfile -Command "[System.Media.SystemSounds]::Asterisk.Play(); Start-Sleep -Milliseconds 800" > /dev/null 2>&1
 }
 
-resultado=$(bash .claude/skills/verificar-cambios/check.sh 2>&1)
+resultado=$(bash .claude/skills/verificar-cambios/scripts/check.sh 2>&1)
 if [ $? -eq 0 ]; then
   sonar
   exit 0
@@ -35,7 +35,7 @@ fallas=$(echo "$resultado" | grep -v '^OK')
 if [ -z "$segundo_intento" ]; then
   # Código 2: Claude Code no deja terminar y le muestra este texto a Claude
   {
-    echo "La verificación de la página falló. Corregí estos problemas (el detalle de cada uno está en .claude/skills/verificar-cambios/reference.md) y volvé a correr check.sh:"
+    echo "La verificación de la página falló. Corregí estos problemas (el detalle de cada uno está en .claude/skills/verificar-cambios/references/reference.md) y volvé a correr scripts/check.sh:"
     echo "$fallas"
   } >&2
   exit 2

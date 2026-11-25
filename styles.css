@@ -57,8 +57,17 @@ body {
   min-height: 100vh;
 }
 
+/* Cambio suave de colores al pasar de un tema al otro. También van los
+   elementos que tienen su propio color (títulos, enlaces, mensajes): si no,
+   cambiarían de golpe mientras el fondo todavía se está cambiando. */
 body,
 header,
+h1,
+h2,
+h3,
+a,
+.campo-error,
+.form-estado,
 .presentacion,
 .sobre-mi,
 .tarjeta,
@@ -130,9 +139,13 @@ main {
   padding: 2rem 1rem;
 }
 
-/* Presentación y "Sobre mí" comparten la misma caja */
+/* ===== Cajas ===== */
+/* Presentación, "Sobre mí", "Mis habilidades" y Contacto comparten la misma caja.
+   Cada sección agrega más abajo solo lo suyo, como el espacio de arriba. */
 .presentacion,
-.sobre-mi {
+.sobre-mi,
+.habilidades,
+.contacto {
   max-width: 700px;
   margin: 0 auto;
   background-color: var(--card-bg);
@@ -141,13 +154,17 @@ main {
   box-shadow: 0 2px 8px var(--card-shadow);
 }
 
-/* Pantallas muy chicas: menos relleno en la presentación y en "Sobre mí" */
+/* Pantallas muy chicas: menos relleno en las cajas */
 @media (max-width: 480px) {
   .presentacion,
-  .sobre-mi {
+  .sobre-mi,
+  .habilidades,
+  .contacto {
     padding: 1.25rem;
   }
 }
+
+/* ===== Presentación ===== */
 
 .presentacion h2,
 .sobre-mi h2 {
@@ -245,19 +262,7 @@ main {
 
 /* ===== Mis habilidades ===== */
 .habilidades {
-  max-width: 700px;
-  margin: 2.5rem auto 0;
-  background-color: var(--card-bg);
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px var(--card-shadow);
-}
-
-/* Pantallas muy chicas: menos relleno en "Mis habilidades" */
-@media (max-width: 480px) {
-  .habilidades {
-    padding: 1.25rem;
-  }
+  margin-top: 2.5rem;
 }
 
 .habilidades h2 {
@@ -286,19 +291,7 @@ main {
 
 /* ===== Contacto ===== */
 .contacto {
-  max-width: 700px;
-  margin: 2.5rem auto 0;
-  background-color: var(--card-bg);
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px var(--card-shadow);
-}
-
-/* Pantallas muy chicas: menos relleno en el formulario */
-@media (max-width: 480px) {
-  .contacto {
-    padding: 1.25rem;
-  }
+  margin-top: 2.5rem;
 }
 
 .contacto h2 {

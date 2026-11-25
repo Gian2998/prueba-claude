@@ -99,11 +99,21 @@ Cada sección tiene el mismo número que la línea de `check.sh`. Las verificaci
 
 ## Qué hay que revisar a mano
 
-El script no puede comprobar estas reglas de `CLAUDE.md`. Revisalas siguiendo la sección "Cómo probar" de `CLAUDE.md`:
+El script no puede comprobar estas reglas de `CLAUDE.md`.
 
-- **Contraste de 4.5:1** entre cada texto y su fondo, en los dos temas. Para un color nuevo, medilo con un comprobador de contraste (por ejemplo, el que tienen las herramientas de desarrollador del navegador al inspeccionar un texto).
-- **Sin scroll horizontal a 360px**: F12 → modo dispositivo.
+En los archivos:
+
 - **Orden de los bloques de `styles.css`**: uno por sección, en el orden de la página, y cada media query justo debajo de la regla que modifica.
 - **Comentarios en español** en HTML, CSS y JavaScript.
-- **Navegación con Tab**: recorre todo en orden y se ve el contorno de foco.
-- **El formulario**: los casos de "Cómo probar" en `CLAUDE.md`.
+
+Abriendo `index.html` en el navegador:
+
+- **Contraste de 4.5:1** entre cada texto y su fondo, en los dos temas. Para un color nuevo, medilo con un comprobador de contraste (por ejemplo, el que tienen las herramientas de desarrollador del navegador al inspeccionar un texto).
+- **Temas**: alternar con el botón y recargar; se mantiene el tema elegido.
+- **Celular** (F12 → modo dispositivo, a 360px y 480px): sin scroll horizontal.
+- **Teclado**: Tab recorre todos los elementos interactivos en el orden de la página y cada uno muestra su contorno de foco.
+- **Formulario**:
+  - Vacío: aparecen los 3 errores y el foco va a Nombre.
+  - `hola@` y un mensaje de menos de 10 caracteres dan error.
+  - Al corregir un campo, su error desaparece mientras escribís.
+  - Con todo bien: aparece el mensaje de éxito, el formulario se vacía y la página no se recarga.

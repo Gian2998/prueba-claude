@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 # Comprueba las reglas de CLAUDE.md que se pueden verificar leyendo los archivos.
-# Uso (desde la raíz del proyecto): bash .claude/skills/verificar-cambios/check.sh
+# Uso (desde la raíz del proyecto): bash .claude/skills/verificar-cambios/scripts/check.sh
 # Termina con código 0 si todo está bien y con 1 si alguna verificación falla.
-# El detalle de cada verificación está en reference.md, con el mismo número.
+# El detalle de cada verificación está en references/reference.md, con el mismo número.
 
-# Va a la raíz del proyecto (tres carpetas arriba de este script)
-cd "$(dirname "$0")/../../.." || exit 2
+# Va a la raíz del proyecto (cuatro carpetas arriba de este script:
+# scripts → verificar-cambios → skills → .claude → raíz)
+cd "$(dirname "$0")/../../../.." || exit 2
 
 CSS=styles.css
 HTML=index.html
@@ -310,9 +311,9 @@ fi
 # ---------------------------------------------------------------------------
 echo
 if [ "$fallas" -eq 0 ]; then
-  echo "Todo bien. Falta revisar a mano lo que figura al final de reference.md."
+  echo "Todo bien. Falta revisar a mano lo que figura al final de references/reference.md."
   exit 0
 else
-  echo "$fallas verificación(es) fallaron. El detalle de cada una está en reference.md."
+  echo "$fallas verificación(es) fallaron. El detalle de cada una está en references/reference.md."
   exit 1
 fi

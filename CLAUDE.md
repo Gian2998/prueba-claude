@@ -29,13 +29,4 @@ Página personal estática: HTML, CSS y JavaScript sin librerías ni paso de com
 
 ## Cómo probar
 
-No hay tests automáticos. Abrí `index.html` y revisá:
-
-- Temas: alternar con el botón y recargar; se mantiene el tema elegido.
-- Celular (F12 → modo dispositivo, a 360px y 480px): sin scroll horizontal.
-- Teclado: Tab recorre todos los elementos interactivos en el orden de la página y cada uno muestra su contorno de foco.
-- Formulario:
-  - Vacío: aparecen los 3 errores y el foco va a Nombre.
-  - `hola@` y un mensaje de menos de 10 caracteres dan error.
-  - Al corregir un campo, su error desaparece mientras escribís.
-  - Con todo bien: aparece el mensaje de éxito, el formulario se vacía y la página no se recarga.
+No hay tests automáticos. Al terminar un cambio, seguí la skill `verificar-cambios`: corre `check.sh` y lista lo que hay que revisar a mano en el navegador.

@@ -70,7 +70,7 @@
     }
 
     // Guardamos el nombre antes de vaciar el formulario.
-    const nombre = campos[0].value.trim();
+    const nombre = document.getElementById("nombre").value.trim();
     form.reset();
     intentoEnviar = false;
     // textContent (y no innerHTML) muestra el texto tal cual, sin interpretar código.

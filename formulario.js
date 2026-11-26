@@ -34,6 +34,8 @@
     if (campo.id === "mensaje") {
       if (valor === "") return "Escribí un mensaje.";
       if (valor.length < 10) return "El mensaje tiene que tener al menos 10 caracteres.";
+      // El maxlength="1000" del HTML ya no deja escribir más, así que esto no
+      // debería pasar nunca. Queda como respaldo por si alguien saca el maxlength.
       if (valor.length > 1000) return "El mensaje no puede pasar de 1000 caracteres.";
     }
 

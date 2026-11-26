@@ -83,6 +83,7 @@ footer,
     transform 0.2s ease;
 }
 
+/* ===== Encabezado ===== */
 /* Celular primero. El margen lateral de 4rem deja lugar al botón de tema
    (1rem + 2.75rem) para que el título nunca quede debajo de él. */
 header {
@@ -385,6 +386,7 @@ main {
   font-weight: 600;
 }
 
+/* ===== Pie de página ===== */
 footer {
   background-color: var(--footer-bg);
   text-align: center;
